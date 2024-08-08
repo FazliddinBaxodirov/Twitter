@@ -11,7 +11,7 @@ export default function SignIn() {
   function handleSubmitLogin(e){
     e.preventDefault()
     const obj = {
-      login:e.target.login.value,
+      login:e.target.login.value.trim(),
       password:e.target.password.value
     }
     if(obj.login == 'fazliddin' && obj.password == '123'){
