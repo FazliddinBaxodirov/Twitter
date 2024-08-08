@@ -6,6 +6,7 @@ import First from '../../assets/Images/first.svg'
 import Second from '../../assets/Images/second.svg'
 import Third from '../../assets/Images/third.svg'
 import PostItem from '../../components/PostItem'
+import Kebab from '../../assets/Images/kebab.png'
 
 export default function Home() {
   const [postValue,setPostValue] = useState("")
@@ -41,13 +42,13 @@ export default function Home() {
       comentcount:'10',
       replycount:'1',
       likecount:"8",
-      img:null
+      img:Kebab
     },
   ]) 
 
   return (
-    <div className='w-[80%]'>
-      <div className='w-[70%] border-r-[1px] border-r-slate-400 h-screen overflow-y-auto'>
+    <div className='w-[85%]'>
+      <div className='w-[73%] border-r-[1px] border-r-slate-400 h-screen overflow-y-auto'>
         <div className='sticky top-0 z-50 bg-white p-[20px] border-b-[1px] border-b-slate-400 flex justify-between'>
           <h2 className='font-bold text-[24px]  '>Home</h2>
           <button>

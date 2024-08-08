@@ -5,7 +5,7 @@ import Navbar from '../../components/Navbar'
 
 export default function DashboardRoute() {
   return (
-    <div className='container max-w-[1200px] mx-auto flex justify-between'>
+    <div className='container max-w-[1300px] mx-auto flex justify-between'>
       <Navbar/>
       <Routes>
         <Route path='/' element={<Home/>}/>

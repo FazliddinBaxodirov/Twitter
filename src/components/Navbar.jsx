@@ -58,7 +58,7 @@ export default function Navbar() {
         },
     ]
   return (
-    <div className='relative w-[20%] pt-[31px] pr-[53px] border-r-[1px] h-screen border-slate-400 overflow-y-auto'>
+    <div className='relative w-[18%] pt-[31px] pr-[53px] border-r-[1px] h-screen border-slate-400 overflow-y-auto'>
         <Link>
            <img src={Logo} alt="logo" />
         </Link>
