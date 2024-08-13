@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Logo from '../assets/Images/logo.svg'
-import { Link, NavLink } from 'react-router-dom'
+import { Link, } from 'react-router-dom'
 import { BookmarksIcon, DotsIcon, ExploreIcon, HomeIcon, ListsIcon, MessageIcon, MoreIcon, NotificationIcon, ProfileIcon } from '../assets/Images/Icons'
 import NavItem from './NavItem'
 import Button from './button'
 import avatar from '../assets/Images/avatar.svg'
+import Modal from './Modal'
 
 export default function Navbar() {
     const navList = [
@@ -57,6 +58,11 @@ export default function Navbar() {
             icon:<MoreIcon/>
         },
     ]
+    const [openModal,setOpenModal] = useState(false)
+    function logOut(){
+        localStorage.clear()
+        location.pathname = '/'
+    }
   return (
     <div className='relative w-[18%] pt-[31px] pr-[53px] border-r-[1px] h-screen border-slate-400 overflow-y-auto'>
         <Link>
@@ -72,7 +78,14 @@ export default function Navbar() {
                 <strong className='font-semibold text-[16px] text-[#000000]'>Bobur</strong>
                 <a className='font-normal text-[16px] text-[#000] opacity-[60%]' href="mailto:">@bobur_mansurov</a>
             </div>
-            <button><DotsIcon/></button>
+            <button onClick={() => setOpenModal(true)}><DotsIcon/></button>
+            <Modal openModal={openModal} setOpenModal={setOpenModal}>
+                <h2 className='text-[35px] font-bold text-white '>Do you really want to quit?</h2>
+                <div className='flex justify-around mt-[70px]'>
+                    <Button onClick={() => setOpenModal(false)}  extrastyle={'w-[150px] py-[10px] bg-green-500 '} title={'No'}/>
+                    <Button onClick={logOut} extrastyle={'w-[150px] py-[10px] bg-red-500 '} title={'Yes'}/>
+                </div>
+            </Modal>
         </div>
     </div>
   )
